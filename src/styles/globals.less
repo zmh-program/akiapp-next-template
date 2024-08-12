@@ -74,3 +74,50 @@
     @apply bg-background text-foreground;
   }
 }
+
+* {
+  outline: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.ui-input:-webkit-autofill,
+.ui-input:-moz-autofill,
+.ui-input:-ms-autofill,
+.ui-input:-o-autofill,
+.ui-input:autofill {
+  background: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+
+  -webkit-text-fill-color: hsl(var(--foreground)) !important;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: hsl(var(--foreground)) !important;
+}
